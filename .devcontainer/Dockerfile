@@ -1,6 +1,7 @@
 # Use the base image of Ubuntu
 # FROM ubuntu:22.04
-FROM mcr.microsoft.com/devcontainers/base:noble
+FROM mcr.microsoft.com/devcontainers/base:ubuntu-22.04
+# FROM mcr.microsoft.com/devcontainers/base:noble
 
 # Set the DEBIAN_FRONTEND variable to avoid interactive prompts
 ENV DEBIAN_FRONTEND=noninteractive
