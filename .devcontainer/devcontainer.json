@@ -13,10 +13,10 @@
             "settings": {}
         },
         "extensions": [
-            "ziglang.vscode-zig",
-            "ms-vscode.cpptools",
+            "ms-azuretools.vscode-containers",
             "ms-vscode.cmake-tools",
-            "ms-azuretools.vscode-containers"
+            "ms-vscode.cpptools",
+            "ziglang.vscode-zig"
         ]
     },
     "forwardPorts": [],
