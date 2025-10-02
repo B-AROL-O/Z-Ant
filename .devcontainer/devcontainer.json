@@ -4,13 +4,16 @@
         "dockerfile": "Dockerfile",
         "context": ".."
     },
-    "settings": {},
-    "extensions": [
-        "ziglang.vscode-zig",
-        "ms-vscode.cpptools",
-        "ms-vscode.cmake-tools"
-    ],
+    "customizations": {
+        "vscode": {
+            "settings": {}
+        },
+        "extensions": [
+            "ziglang.vscode-zig",
+            "ms-vscode.cpptools",
+            "ms-vscode.cmake-tools"
+        ]
+    },
     "forwardPorts": [],
     "remoteUser": "vscode"
 }
-
