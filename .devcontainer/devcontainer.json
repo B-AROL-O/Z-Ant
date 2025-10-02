@@ -5,6 +5,7 @@
         "context": ".."
     },
     "features": {
+        "ghcr.io/devcontainers/features/python:1": {},
         "ghcr.io/jsburckhardt/devcontainer-features/uv:1": {}
     },
     "customizations": {
