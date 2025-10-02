@@ -27,6 +27,11 @@ RUN wget https://ziglang.org/download/${ZIG_VERSION}/zig-linux-$(arch)-${ZIG_VER
     && ln -s /opt/zig/zig /usr/local/bin/zig \
     && rm zig-linux-$(arch)-${ZIG_VERSION}.tar.xz
 
+# Install Arduino CLI under /usr/local/bin
+RUN mkdir -p /usr/local \
+    && cd /usr/local \
+    && curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sh
+
 # # Set the working directory
 # WORKDIR /workspace
 
