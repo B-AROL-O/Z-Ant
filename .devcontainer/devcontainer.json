@@ -13,6 +13,7 @@
             "settings": {}
         },
         "extensions": [
+            "mhutchie.git-graph",
             "ms-azuretools.vscode-containers",
             "ms-vscode.cmake-tools",
             "ms-vscode.cpptools",
