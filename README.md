@@ -9,9 +9,9 @@
 <!-- BEER_TIMINGS_START -->
 Beer model timing (QEMU, Cortex-M55):
 
-- Reference: 1389.15 ms
-- CMSIS-NN: 763.67 ms
-- Improvement: 625.48 ms (45.0%)
+- Reference: 880.58 ms
+- CMSIS-NN: 828.84 ms
+- Improvement: 51.74 ms (5.9%)
 <!-- BEER_TIMINGS_END -->
 
 
@@ -45,6 +45,10 @@ Beer model timing (QEMU, Cortex-M55):
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> main
 ![image](https://github.com/user-attachments/assets/6a5346e5-58ec-4069-8143-c3b7b03586f3)
 
 ## 🛠️ CI/CD
@@ -97,7 +101,7 @@ export PATH="$(pwd)/.zig-toolchain/current:$PATH"
 # - put your onnx model inside /datasets/models in a folder with the same of the model to to have: /datasets/models/my_model/my_model.onnx
 
 # - simplify and prepare the model for zant inference engine
-./zant input_setter --model my_model --shape "your,model,sha,pe"
+./zant input_setter --model my_model --shape your,model,sha,pe
 
 # - Generate test data
 ./zant user_tests_gen --model my_model
@@ -114,13 +118,13 @@ zig build extractor-test -Dmodel="my_model"
 
 # --- GENERATING THE LIBRARY and TESTS ---
 # Generate code for a specific model
-zig build lib-gen -Dmodel="my_model" -Denable_user_tests [-Ddynamic -Ddo_export -Dlog -Dcomm ... ]
+zig build lib-gen -Dmodel="my_model" -Denable_user_tests [ -Ddo_export -Dlog -Dcomm ... ]
 
 # Test the generated code
-zig build lib-test -Dmodel="my_model" -Denable_user_tests [-Ddynamic -Ddo_export -Dlog -Dcomm ... ]
+zig build lib-test -Dmodel="my_model" -Denable_user_tests [ -Ddo_export -Dlog -Dcomm ... ]
 
 # Build the static library
-zig build lib -Dmodel="my_model" [-Dtarget=... -Dcpu=...]
+zig build lib -Dmodel="my_model" [-Doptimize=Release? -Dtarget=... -Dcpu=...]
 
 ```
 
@@ -190,21 +194,6 @@ zig build lib -Dmodel="my_model" [-Dtarget=... -Dcpu=...]
 ```
 
 The script terminates QEMU as soon as the PASS banner appears, so the reported time reflects the actual firmware runtime instead of the former 3 s watchdog timeout. A non-zero exit status accompanied by `fatal: unexpected exception` indicates a crash inside the firmware before the PASS message is printed.
-
-## 🔧 ONNX Tools (Python Helpers)
-
-Z-Ant includes Python scripts for ONNX model preparation:
-
-```bash
-# Prepare your model: set input shapes and infer all tensor shapes
-./zant input_setter  --model model --shape 1,3,224,224
-
-# Generate test data for validation
-./zant user_tests_gen --model model --iterations 10
-
-# Create operator test models
-./zant onnx_gen --op Conv --iterations 5
-```
 
 ## 💼 Integration Examples
 
